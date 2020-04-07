@@ -1,0 +1,30 @@
+//	3. 队列 （Queue）
+
+ADT (Queue)
+Data
+	//同线性表
+Operation
+	InitQueue (*Q);
+	DestroyQueue (*Q);  //若Q存在，则销毁
+	ClearQueue (*Q);	//清空
+	QueueEmpty (Q);	//true  false
+	GetHead (Q, *e); 	//若非空，用e返回Q的队头元素
+	EnQueue (*Q, e);
+	DeQueue (*Q, *e);
+	QueueLength (Q);
+endADT
+
+//Queue ADT Type Definitions 
+typedef struct node 
+{ 
+	void *DataPtr; 
+	struct node *next; 
+} QueueNode; 
+
+typedef struct
+{ 
+	QueueNode *front; 
+	QueueNode *rear; 
+	int count; 
+} QUEUE; 
+
