@@ -2,6 +2,12 @@
 #include "simpleLinkedListTemplate.h"
 using namespace std;
 
+/*Instructions:
+• The List class declaration (optional, only if you had modified it)
+• exist()
+• extractMax()
+• reverseOp()
+*/
 
 template <class T>
 ListNode<T>::ListNode(T n)
@@ -32,7 +38,6 @@ void List<T>::removeHead()
 
 template <class T>
 void List<T>::print(bool withNL) {
-
 	ListNode<T> *temp = _head;
 	while (temp) {
 		cout << temp->_item;
@@ -43,13 +48,11 @@ void List<T>::print(bool withNL) {
 		temp = temp->_next;
 	}
 	cout << endl;
-	  
 }
 
-//Task 1 - done
+//Task 1
 template <class T>
 bool List<T>::exist(T n) {
-	// modify this
     ListNode<T> *next = _head;
     while (next != NULL){
         if (next->_item == n){
@@ -101,13 +104,13 @@ T List<T>::extractMax()
         last=next;
         next=next->_next;
     }
-    
     _size--;
 	return max;
 }
 
 
 //Task 5
+//It will reverse the order of the items in the list
 template <class T>
 void List<T>::reverseOp() {
     ListNode<T> *_headrev;
